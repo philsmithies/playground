@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Fetch</title>
+</head>
+<body>
+<h1>Testing Multiple Fetch</h1>
+<script>
+
+  const filenames = [
+    'rainbow.jpg',
+    'umbrella.jpg',
+    'umbrella2.jpg'
+  ]
+
+  catchRainbows(filenames)
+
+  async function catchRainbows(filenames){
+    for (let filename of filenames){
+      const response = await fetch(filename)
+      const blob = await response.blob()
+      const img = document.createElement('img')
+      img.src = URL.createObjectURL(blob)
+      img.width = '400'
+      document.body.append(img)
+    }
+  }
+
+
+</script>
+</body>
