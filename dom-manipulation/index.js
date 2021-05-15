@@ -5,6 +5,7 @@ const inDiv = document.createElement('h3')
 const meToo = document.createElement('p')
 
 div.style['backgroundColor'] = 'pink'
+div.style.width = "500px";
 div.style.border = "thick solid black"
 div.style.textAlign = "center"
 
@@ -30,9 +31,21 @@ newContent.appendChild(div)
 
 const btn = document.querySelector('#btn')
 btn.addEventListener('click', function (e) {
-  console.log(e)
+  e.target.style.background = 'blue';
+  alert('it is a query selector alert')
 })
 
 function alertFunction() {
   alert('it is a click')
 }
+
+const alertButton = document.getElementById('alert')
+alertButton.addEventListener('click', alertFunction)
+
+const buttons = document.querySelectorAll('button')
+
+buttons.forEach((button =>{
+  button.addEventListener('click', () =>{
+    alert(button.id)
+  })
+}))
