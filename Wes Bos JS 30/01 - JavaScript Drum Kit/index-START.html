@@ -59,17 +59,21 @@
 
 <script>
 
-// el.setAttribute("data-state", "collapsed");
+window.addEventListener("keydown", play)
 
-window.addEventListener("keydown", function (event) { 
-console.log(event)
-  if (event.keyCode == 65){
-    console.log('a key has been pressed')
-  } else if (event.keyCode == 65) {
-    console.log('s key has been pressed')
+  function play(event){
+    const key = document.querySelector(`div[data-key='${event.keyCode}']`)
+    const audio = document.querySelector(`audio[data-key='${event.keyCode}']`)
+    key.classList.add('playing')
+    audio.currentTime = 0
+    audio.play()
+
+    if (!audio) return;
+
+    setTimeout(function() {
+      key.classList.remove('playing');
+    },100);
   }
-
-});
 
 </script>
 
