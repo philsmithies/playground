@@ -6,7 +6,6 @@ function isTrue(value){
   }
 }
 
-
 function expect(actual){
   return {
     toEqualTo: function(expected){
