@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+</head>
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after { 
+    box-sizing: inherit; 
+  }
+
+  div {
+    width: 100%;
+    padding: 100px;
+  }
+
+  .one {
+    background: thistle;
+  }
+
+  .two {
+    background: mistyrose;
+  }
+
+  .three {
+    background: coral;
+  }
+</style>
+
+<button>Hi</button>
+<script>
+
+   // when you click on three you are then clicking on everything out side of it and everything that is wrapping it. 
+   // thats why we call it bubbling.
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button')
+  console.log(divs)
+
+  // document.body.addEventListener('click', logText)
+
+
+  function logText(e) {
+    console.log(this.classList.value)
+    // e.stopPropagation() // stop bubbling onto the parents
+  }
+  
+  // capture true will instead of bubbling up run on the way down to the element 
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false,
+    once: true // runs the event once and then removes itself from the event listener. 
+  }))
+
+  button.addEventListener('click', () => {
+    console.log('click! click!')
+  }, {
+    // you can chain it again so they can only click once, useful for store checkouts or something like that. 
+    once: true
+  })
+
+</script>
+</body>
+</html>
