@@ -9,40 +9,55 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.redContainer {
+  background-color: red;
+  border-radius: 25px;
+  align-self: center;
+  width: 60vh;
+  height: 60vh;
+  padding: 2.5em 2em 2em;
+}
+
 #resetButton, #newNumDivs, #submit{
-  display: block;
+  display: inline-block;
   margin: 2em auto;
   padding: 1em 1.25em;
   border-radius: 10px;
 }
 
+#resetButton{
+  margin-right: 1em;
+}
+
 #newNumDivs, #submit{
-  background-color: lightpink;
-  display: inline-block;
-  margin: 1em 0.25em;
+  background-color: white;
+  margin: 1em 0;
 }
 
 .amountWrapper{
   text-align: center;
 }
 
-#resetButton:hover{
+#resetButton:hover, #submit:hover{
   cursor: pointer;
-  background-color: lightpink;
+  background-color: red;
 }
 
 #etchContainer {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1000px;
+  display: grid;
+  width: 55vh;
+  height: 55vh;
   margin: 0 auto;
   border: 10px solid black;
-}
-
-.etchDiv {
   background-color: white;
-  width: 250px;
-  height: 250px;
+  margin-bottom: 2em;
 }
 
 .etchDivDrawn {

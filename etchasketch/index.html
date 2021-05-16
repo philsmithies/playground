@@ -7,14 +7,19 @@
   <link rel="stylesheet" href="style.css">
   <title>Etchasketch</title>
 </head>
-<body>
-  <h1>Etchasketch</h1>
-  <button id="resetButton">Start Again?</button>
-  <div class="amountWrapper">
-    <input type="text" id="newNumDivs" placeholder="Amount of Squares"></input>
-    <button id="submit">Submit</button>
-  </div>
-  <div id="etchContainer"></div>
-</body>
-<script src="index.js"></script>
+  <body>
+    <div class="container">
+      <h1>Etchasketch</h1>
+      <span id="amountOfPixels"></span>
+      <div class="amountWrapper">
+        <button id="resetButton">Start Again?</button>
+        <input type="text" id="newNumDivs" placeholder="Pixels Per Side"></input>
+        <button id="submit">Submit</button>
+      </div>
+      <div class="redContainer">
+        <div id="etchContainer"></div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
 </html>
