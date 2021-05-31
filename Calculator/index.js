@@ -13,28 +13,25 @@ const equals = document.getElementById('equals')
 const clear = document.getElementById('clear')
 
 function operate (b, operator) {
+  operatingElement = `${operator}`
+  
   if (firstEntry == true){
     runningTotal = parseInt(b)
-    operatingElement = `${operator}`
     console.log('first move is ' + runningTotal)
     firstEntry = false
     updateField(runningTotal)
   } else {
     if (operator == '+'){
       runningTotal += parseInt(b)
-      operatingElement = '+'
       updateField(runningTotal)
     } else if (operator == '-'){
       runningTotal -= parseInt(b)
-      operatingElement = '-'
       updateField(runningTotal)
     } else if (operator == '*'){
       runningTotal = (runningTotal * parseInt(b))
-      operatingElement = '*'
       updateField(runningTotal)
     } else if (operator == '/'){
       runningTotal /= parseInt(b)
-      operatingElement = '/'
       updateField(runningTotal)
     } 
   }
