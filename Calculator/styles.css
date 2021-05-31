@@ -1,3 +1,88 @@
+* {
+  box-sizing: border-box
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 body{
   background-color: grey;
+  text-align: center;
+}
+
+.wrapper{
+  background-color: orangered;
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin-top: 10em;
+  border-radius: 10px;
+}
+
+.calculator_wrapper{
+  background-color: red;
+  width: 50vw;
+}
+
+.calculator_display{
+  width: 97.5%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  text-align: right;
+  padding-right: 10px;
+  background-color: black;
+  color: white;
+  margin-bottom: 2px;
+}
+
+button{
+  height: 60px;
+  background-color: grey;
+  color: white;
+  border-radius: 3px;
+  font-size: 2rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+.operator{
+  background-color: orange;
+}
+
+.operator:hover{
+  background-color: rgb(250, 157, 75);
+  cursor: pointer;
+}
+
+
+.keys_wrapper{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px 2px;
+}
+
+.equals{
+  height: 98%;
+  grid-row: 3 / 6;
+  grid-column: 4 / 5;
+}
+
+.ac_key{
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+
+.zero_key{
+  grid-row: 5 / 6; 
+  grid-column: 1 / 3;
 }

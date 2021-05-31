@@ -11,16 +11,33 @@
   <h2>Hello its a calc</h2> 
   <div class="wrapper">
     <div class="calculator_wrapper">
-      <h1 id="calculator_display">0000</h1>     
-      <h1 id="calculator_operator">''</h1>
-    </div>
-    <input type="text" id="inputField">
-    <button id="addition">+</button>
-    <button id="subtraction">-</button>
-    <button id="multiplication">*</button>
-    <button id="division">/</button>
-    <button id="equals">=</button>
-    <button id="clear">clear</button>
+      <div class="calculator_display_div">
+        <input type="text" class="calculator_display" id="inputField" value="0" disabled />    
+      </div>
+      <!-- <input type="text" id="inputField" placeholder="Enter a Value"> -->
+      <div class="keys_wrapper">
+        <button id="addition" class="operator">+</button>
+        <button id="subtraction"class="operator">-</button>
+        <button id="multiplication"class="operator">*</button>
+        <button id="division"class="operator">/</button>
+
+        <button id="oneKey" class="number_key">7</button>
+        <button id="oneKey" class="number_key">8</button>
+        <button id="oneKey" class="number_key">9</button>
+
+        <button id="oneKey" class="number_key">4</button>
+        <button id="oneKey" class="number_key">5</button>
+        <button id="oneKey" class="number_key">6</button>
+
+        <button id="oneKey" class="number_key">1</button>
+        <button id="oneKey" class="number_key">2</button>
+        <button id="oneKey" class="number_key">3</button>
+        <button id="oneKey" class="number_key zero_key">0</button>
+
+        <button id="dot" class="number_key">.</button>
+        <button id="equals" class="operator equals">=</button>
+        <button id="clear" class="operator ac_key">AC</button>
+      </div>
     </div>
   </div> 
 </body>
