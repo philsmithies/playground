@@ -42,18 +42,21 @@ addition.addEventListener('click', () =>{
   console.log(runningTotal)
 })
 
-// let someFunction = function(event) {
-//   if (event.code === '+') {
-//   updateField(inputField.value)
-//   operate(inputField.value, '+')
-//   console.log(operatingElement)
-//   clearField()
-//   console.log(runningTotal)
-//   }
-// }
+let someFunction = function(e) {
+  if (e.code === 'Digit1') updateField(1)
+  else if (e.code === "Digit2") updateField(2)
+  else if (e.code === "Digit3") console.log(3)
+  else if (e.code === "Digit4") console.log(4)
+  else if (e.code === "Digit5") console.log(5)
+  else if (e.code === "Digit6") console.log(6)
+  else if (e.code === "Digit7") console.log(7)
+  else if (e.code === "Digit8") console.log(8)
+  else if (e.code === "Digit9") console.log(9)
+  else if (e.code === "Digit2") console.log(2)
+}
 
 // addition.addEventListener('click', someFunction, false);
-// window.addEventListener('keydown', someFunction, false);
+window.addEventListener('keydown', someFunction, false);
 
 const subtraction = document.getElementById('subtraction')
 subtraction.addEventListener('click', () =>{
