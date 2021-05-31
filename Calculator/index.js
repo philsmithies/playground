@@ -1,72 +1,117 @@
-function operate (b) {
-  if (operator == '+'){
-    return a + b
-  } else if (operator == '-'){
-    return a - b
-  } else if (operator == '*'){
-    return a * b
-  } else if (operator == '/'){
-    return (a / b).toFixed(3)
-  } 
-}
+let runningTotal = 0
+let operatingElement = ''
+let firstEntry = true
 
-const evaluation = []
+function operate (b, operator) {
+  if (firstEntry == true){
+    runningTotal = parseInt(b)
+    operatingElement = `${operator}`
+    console.log('first move is ' + runningTotal)
+    firstEntry = false
+    updateField(runningTotal)
+  } else {
+    if (operator == '+'){
+      runningTotal += parseInt(b)
+      operatingElement = '+'
+      console.log('running total' + ' ' + runningTotal)
+      updateField(runningTotal)
+    } else if (operator == '-'){
+      runningTotal -= parseInt(b)
+      operatingElement = '-'
+      updateField(runningTotal)
+    } else if (operator == '*'){
+      runningTotal = (runningTotal * parseInt(b))
+      operatingElement = '*'
+      updateField(runningTotal)
+    } else if (operator == '/'){
+      runningTotal /= parseInt(b)
+      operatingElement = '/'
+      updateField(runningTotal)
+    } 
+  }
+} 
+
 
 const addition = document.getElementById('addition')
+
 addition.addEventListener('click', () =>{
-  evaluation.push(inputField.value, '+')
-  updateField(inputField.value, '+')
+  updateField(inputField.value)
+  operate(inputField.value, '+')
+  console.log(operatingElement)
   clearField()
-  console.log(evaluation)
+  console.log(runningTotal)
 })
+
+// let someFunction = function(event) {
+//   if (event.code === '+') {
+//   updateField(inputField.value)
+//   operate(inputField.value, '+')
+//   console.log(operatingElement)
+//   clearField()
+//   console.log(runningTotal)
+//   }
+// }
+
+// addition.addEventListener('click', someFunction, false);
+// window.addEventListener('keydown', someFunction, false);
 
 const subtraction = document.getElementById('subtraction')
 subtraction.addEventListener('click', () =>{
-  evaluation.push(inputField.value, '-')
-  updateField(inputField.value, '-')
+  updateField(inputField.value)
+  operate(inputField.value, '-')
   clearField()
-  console.log(evaluation)
+  console.log(runningTotal)
 })
 
 const multiplication = document.getElementById('multiplication')
 multiplication.addEventListener('click', () =>{
-  evaluation.push(inputField.value, '*')
-  updateField(inputField.value, '*')
+  updateField(inputField.value)
+  operate(inputField.value, '*')
   clearField()
-  console.log(evaluation)
+  console.log(runningTotal)
 })
 
 const division = document.getElementById('division')
 division.addEventListener('click', () =>{
-  evaluation.push(inputField.value, '/')
-  updateField(inputField.value, '/')
+  updateField(inputField.value)
+  operate(inputField.value, '/')
+  operatingElement
   clearField()
-  console.log(evaluation)
+  console.log(runningTotal)
 })
 
 const inputField = document.getElementById('inputField')
-inputField.addEventListener('click', () =>{
-  console.log('inputField')
-})
 
 const equals = document.getElementById('equals')
 equals.addEventListener('click', () =>{
-  console.log(evaluation.reduce((a, b) => a + b, 0))
+  operate(inputField.value, operatingElement)
+  console.log(operatingElement)
+  console.log('final number is ' + ' ' + runningTotal)
+  updateField(`total is ${runningTotal}`)
+  runningTotal = 0
+  clearField()
+  firstEntry = true
 })
 
 const clear = document.getElementById('clear')
 clear.addEventListener('click', () =>{
   inputField.value = ''
+  runningTotal = 0
+  operatingElement = ''
+  updateField('', '')
+  firstEntry = true
 })
 
 const display = document.getElementById('calculator_display')
 const operator = document.getElementById('calculator_operator')
 
-function updateField(value, method){
+function updateField(value){
   display.innerText = value
-  operator.innerText = method
 }
 
 function clearField() {
   inputField.value = ''
 }
+
+// each time that you press the + / - / * etc you should evaluate it and then carry on with the next thing so  
+// you aren't pushing to an array but actually evaluating as you go..
