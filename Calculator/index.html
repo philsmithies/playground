@@ -12,7 +12,7 @@
   <div class="wrapper">
     <div class="calculator_wrapper">
       <div class="calculator_display_div">
-        <input type="text" class="calculator_display" id="inputField" value="0" disabled />    
+        <input type="text" class="calculator_display" id="inputField" disabled />    
       </div>
       <!-- <input type="text" id="inputField" placeholder="Enter a Value"> -->
       <div class="keys_wrapper">
@@ -21,18 +21,18 @@
         <button id="multiplication"class="operator">*</button>
         <button id="division"class="operator">/</button>
 
-        <button id="oneKey" class="number_key">7</button>
-        <button id="oneKey" class="number_key">8</button>
-        <button id="oneKey" class="number_key">9</button>
+        <button id="numBtn" class="number_key" data-key="55" value="7" onclick="myFunction(this)">7</button>
+        <button id="numBtn" class="number_key" data-key="56" value="8" onclick="myFunction(this)">8</button>
+        <button id="numBtn" class="number_key" data-key="57" value="9" onclick="myFunction(this)">9</button>
 
-        <button id="oneKey" class="number_key">4</button>
-        <button id="oneKey" class="number_key">5</button>
-        <button id="oneKey" class="number_key">6</button>
+        <button id="numBtn" class="number_key" data-key="52" value="4" onclick="myFunction(this)">4</button>
+        <button id="numBtn" class="number_key" data-key="53"value="5" onclick="myFunction(this)">5</button>
+        <button id="numBtn" class="number_key" data-key="54" value="6" onclick="myFunction(this)">6</button>
 
-        <button id="oneKey" class="number_key">1</button>
-        <button id="oneKey" class="number_key">2</button>
-        <button id="oneKey" class="number_key">3</button>
-        <button id="oneKey" class="number_key zero_key">0</button>
+        <button id="numBtn" class="number_key" data-key="49" value="1" onclick="myFunction(this)">1</button>
+        <button id="numBtn" class="number_key" data-key="50" value="2" onclick="myFunction(this)">2</button>
+        <button id="numBtn" class="number_key" data-key="51" value="3" onclick="myFunction(this)" >3</button>
+        <button id="numBtn" class="number_key zero_key" data-key="48" value="0" onclick="myFunction(this)">0</button>
 
         <button id="dot" class="number_key">.</button>
         <button id="equals" class="operator equals">=</button>
